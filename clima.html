@@ -1,0 +1,102 @@
+<!--
+===========================================================
+🌤️ Clima App - 5 Días
+===========================================================
+
+Descripción:
+Aplicación web que permite consultar el clima de una ciudad
+durante los próximos 5 días utilizando la API de Open-Meteo.
+
+El usuario ingresa una ciudad y un país, y la aplicación:
+- Obtiene las coordenadas (latitud y longitud)
+- Consulta el clima diario
+- Muestra temperatura máxima, mínima y viento
+- Presenta los datos en tarjetas horizontales con animaciones
+- Incluye iconos dinámicos según temperatura
+
+-----------------------------------------------------------
+Tecnologías utilizadas:
+- HTML5
+- CSS3 (animaciones y diseño moderno)
+- JavaScript (Vanilla)
+- API REST (Open-Meteo)
+
+-----------------------------------------------------------
+Funcionalidades principales:
+✔ Búsqueda por ciudad y país
+✔ Visualización de clima a 5 días
+✔ Animaciones suaves en tarjetas
+✔ Iconos dinámicos de clima
+✔ Manejo de errores mediante modal emergente
+
+-----------------------------------------------------------
+Manejo de errores:
+- Campos vacíos
+- Entrada inválida (números)
+- Ciudad no encontrada
+- Problemas de conexión o API
+
+Los errores se muestran mediante una ventana emergente
+con opción de cierre.
+
+-----------------------------------------------------------
+API utilizada:
+Open-Meteo (sin API Key)
+
+Endpoints:
+- Geocoding:
+  https://geocoding-api.open-meteo.com/v1/search
+- Clima:
+  https://api.open-meteo.com/v1/forecast
+
+-----------------------------------------------------------
+Uso:
+Abrir el archivo index.html en un navegador web,
+ingresar ciudad y país, y presionar "Consultar".
+
+-----------------------------------------------------------
+Autor:
+Proyecto educativo para práctica de APIs, manejo de errores
+y diseño de interfaces web modernas.
+
+===========================================================
+-->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Clima App</title>
+
+<link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="inputs">
+        <input type="text" id="ciudad" placeholder="Ciudad">
+        <input type="text" id="pais" placeholder="País">
+        <button onclick="consultarClima()">Consultar</button>
+    </div>
+
+    <div class="resultado">
+        <h2 id="titulo"></h2>
+        <div class="dias" id="dias"></div>
+    </div>
+
+</div>
+
+<!-- Modal -->
+<div class="modal" id="modal">
+    <div class="modal-content">
+        <p id="mensajeError"></p>
+        <button onclick="cerrarModal()">Aceptar</button>
+    </div>
+</div>
+
+<script src="/js/app.js"></script>
+
+</body>
+</html>
